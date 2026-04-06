@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Cezary",
+    "surname": "Żurek",
+    "born": 1987,
+    "gender": "M",
+    "city": "Grudziądz",
+    "tags": [
+      "transport",
+      "IT"
+    ]
+  },
+  {
+    "name": "Jacek",
+    "surname": "Nowak",
+    "born": 1991,
+    "gender": "M",
+    "city": "Grudziądz",
+    "tags": [
+      "transport"
+    ]
+  },
+  {
+    "name": "Wojciech",
+    "surname": "Bielik",
+    "born": 1986,
+    "gender": "M",
+    "city": "Grudziądz",
+    "tags": [
+      "transport",
+      "praca z ludźmi"
+    ]
+  },
+  {
+    "name": "Wacław",
+    "surname": "Jasiński",
+    "born": 1986,
+    "gender": "M",
+    "city": "Grudziądz",
+    "tags": [
+      "transport"
+    ]
+  }
+]
