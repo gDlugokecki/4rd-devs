@@ -1,34 +1,27 @@
 # 4rd-devs
 
-This repo contains solutions to AI_devs 4 course tasks.
+Solutions to AI_devs 4 course tasks.
 
-## What this repo is about
+## Tasks
 
-### 1. Regular tasks
-Each task lives in its own directory (`s01e01/`, `s01e02/`, etc.) and requires building an agent-based solution that interacts with the course API at `https://hub.ag3nts.org/verify`.
+Each task lives in its own directory (`s01e01/`, `s02e01/`, etc.) and interacts with `https://hub.ag3nts.org/verify` via POST:
 
-All requests are POST with JSON body:
 ```json
-{
-  "apikey": "<key>",
-  "task": "<task-name>",
-  "answer": <answer>
-}
+{"apikey": "<key>", "task": "<task-name>", "answer": <answer>}
 ```
 
-Use `send_answer(task, answer)` from `send_answer.py` to submit final answers.
-Use `AIClient` from `ai_client.py` for LLM calls (wraps Anthropic SDK).
+Use `send_answer(task, answer)` from `send_answer.py` to submit.
+Use `AIClient` from `ai_client.py` for LLM calls.
 
-### 2. Secret/mystery tasks
-Hidden tasks discovered through hints. The goal is to figure out what the task expects and find a flag in the format `{FLG:...}`. Hints may be cryptic, ironic, or joke-based — don't take them literally.
+Secret/mystery tasks: find a flag `{FLG:...}` — hints may be cryptic, don't take them literally.
 
-## Shared utilities
+## Utilities
 
-- `ai_client.py` — `AIClient(system, model)` with `.ask(prompt)` for simple calls; use `.client` directly for tool-use agentic loops
-- `send_answer.py` — `send_answer(task, answer)` submits to the grading API; also exports `API_URL` and `API_KEY`
+- `ai_client.py` — `AIClient(system, model)` with `.ask(prompt)`; use `.client` directly for agentic loops
+- `send_answer.py` — `send_answer(task, answer)`; also exports `API_URL`, `API_KEY`
 
-## Patterns used
+## Code style
 
-- Simple LLM classification: `AIClient.ask()` in a loop (see `s01e01/`)
-- Agentic tool loop: `ai.client.messages.create()` with tools + message history (see `s01e02/`, `s01e05/`)
-- FastAPI server acting as a conversational proxy (see `s01e03/`)
+- No comments unless logic is non-obvious
+- Prefer concise, readable code over verbose explanations
+- Run tasks with `poetry run python -m sXXeYY.task` from the project root
